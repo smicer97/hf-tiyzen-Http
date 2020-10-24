@@ -1,0 +1,51 @@
+Kisautós étterem terve:
+Kiidunlás projekt a Robotics, amire építve módosítva és kiegészítve fogjuk elkészíteni a házinkat.
+
+A cél egy 3 asztalos étterem terve, ahol kisautók szállítják ki a rendelést a vendégeknek. A következõ elrendezés reprezentálja a térképet:
+_____________________
+|					|
+|		  B			|
+|		  |      	|
+|	A_____*_____C	|
+|		  |			|
+|		  |			|
+|	    PPPPPP    	|
+|___________________|
+ A P jelek jelölik a pultot ahonnan a kiskocsik felveszik az ételt és kiviszik követve a vonalat az A/B/C betûvel jelölt asztalokhoz. A * jelöli az útkeresztezõdést,
+ ,amit az autók elõre ismernek (megközelítve azt lassítanak és fordulnak a megfelelõ irányban).
+ 
+A robot az alábbi dolgokra képes:
+	- ellenõrzik a pultnál hogy van e elviendõ étel
+	- elvinni a rendelést az adott asztalhoz (A,B,C) -> majd visszamenni a Pulthoz (P)
+	- van öndiagnosztikai funkciója
+	- ha a robot teljesen elvesztené a voanalat menjen a kiinduló pontra a legrövidebb után (valami timerhez kötni)
+
+A robot jellemzõi:
+	- van egy vonal szenzora  a kocsi elején
+	- tárolja a pozícióját (x,y koordináta), orientációját, sebességét, gyorsulását
+	- tárolja a pult, az asztalok (A,B,C) és a keresztezõdés koordinátáit (x,y koordináták): ezeket alapjáraton az Environment tartalmazhatná, amit konstruktorban átadunk a robotnak a létrehozásakor
+
+
+A robot az alábbi módon kommunikál a külvilággal:
+	- feliratkozik az Environment onTick eseményére (konstruktorban menti le az Environment-et)
+	- A vonal szenzorán keresztül szerez információt (a kiindulási megoldásban egy szkennelést véggez egy egyenes vonalon, ha talál vonalat jelez -> strategy mintával különbözõ szenzorok/szkennelések megvalósíthatóak lennének)
+
+
+TODOs:
+Environment elkészítése:
+	- Map elkészítése (megrajzolás,betöltés)
+	- Tick Source elkészítése
+Robot elkészítése
+	- IRobot, RobotBase (õsosztály), CustomRobot(konkrét robot)
+	- Line Sensor -> ebbõl lehetne többféle így a strategy patternet letudnánk (ha a CustomRobot-nak a konstruktorában be lehetne adni hogy melyik szenzort használja, akkor DependencyInjection is megvalósul)
+	- Distance sensorra nincs szükség, ezeket törölni
+RobotBrain elkészítése
+	-
+	-
+	-
+Vásárlók elkészítése:
+	- rendelés HTTP-n keresztül (REST API) + kéne elfréne egy proxy komponens (távoli proxy és védelmi proxy is egyben): addícionális logika 
+	- van pénzük (proxyn keresztül tudnak rendelni)
+	-
+Viewer (étterem kinézete)
+	- abstract Factory -> többféle designal tervezni az éttermet (más logó más nyomógombok)

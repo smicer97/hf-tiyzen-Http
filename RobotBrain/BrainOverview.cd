@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="RobotBrain.BrainBase">
+    <Position X="18.5" Y="8" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAEACAgACIkgAAACAQAAQCIABAgqASAAAAACYgAAAAA=</HashCode>
+      <FileName>BrainBase.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Robot" />
+      <Property Name="IStand" />
+    </ShowAsAssociation>
+    <Lollipop Orientation="Left" Position="0.612" />
+  </Class>
+  <Class Name="RobotBrain.State.ReadyToServeState">
+    <Position X="9.75" Y="12.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEIAAAIAAAAAAAQAA=</HashCode>
+      <FileName>State\ReadyToServeState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RobotBrain.State.StateBase">
+    <Position X="11.25" Y="8.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAIAACAAAAAgAAQAAAAAEAAAAIAAAAAAAQAA=</HashCode>
+      <FileName>State\StateBase.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Brain" />
+    </ShowAsAssociation>
+    <Lollipop Orientation="Right" Position="0.414" />
+  </Class>
+  <Class Name="RobotBrain.State.FollowingLineState">
+    <Position X="12" Y="12.25" Width="1.75" />
+    <InheritanceLine Type="RobotBrain.State.StateBase" ManuallyRouted="true">
+      <Path>
+        <Point X="12.375" Y="11.209" />
+        <Point X="12.375" Y="11.875" />
+        <Point X="12.875" Y="11.875" />
+        <Point X="12.875" Y="12.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAEIAAAIAAAAAAAQAA=</HashCode>
+      <FileName>State\FollowingLineState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.RobotBase">
+    <Position X="24" Y="8.25" Width="2.5" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Environment" />
+    </ShowAsAssociation>
+    <Lollipop Orientation="Left" Position="0.357" />
+  </Class>
+  <Class Name="Environment.DefaultEnvironment">
+    <Position X="30.5" Y="9" Width="2.25" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Field Name="Map" />
+    </ShowAsAssociation>
+    <Lollipop Orientation="Left" Position="0.158" />
+  </Class>
+  <Class Name="Environment.Map">
+    <Position X="33.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RobotBrain.WallsAndLinesDemoBrain">
+    <Position X="18.75" Y="14.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAABAAAAAAAAAIAAAAEAAAAAAAAAgAAAA=</HashCode>
+      <FileName>WallsAndLinesDemoBrain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.LineAndWallDetectorRobot">
+    <Position X="24.25" Y="12.5" Width="2.5" />
+    <NestedTypes>
+      <Class Name="Robot.LineAndWallDetectorRobot.SensorStatusChangeDelegate" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RobotBrain.State.SelfDiagnosticState">
+    <Position X="7.25" Y="12.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEIAAAIAAAAAAAQAA=</HashCode>
+      <FileName>State\SelfDiagnosticState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RobotBrain.AtTheTableState">
+    <Position X="14" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEIAAAIAAAAAAAQAA=</HashCode>
+      <FileName>State\AtTheTableState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Stand.StandBase">
+    <Position X="23.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Orientation="Left" Position="0.498" />
+  </Class>
+  <Interface Name="RobotBrain.IBrain">
+    <Position X="16.25" Y="6.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAEABACIEAAAACAQAAAAIAAAAoACAAAAACYgAAAIA=</HashCode>
+      <FileName>IBrain.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RobotBrain.State.IState">
+    <Position X="14" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>State\IState.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Robot.IRobot">
+    <Position X="22" Y="8.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Environment.IEnvironment">
+    <Position X="27.75" Y="8.75" Width="2" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Stand.IStand">
+    <Position X="21.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
