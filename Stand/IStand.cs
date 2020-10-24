@@ -7,5 +7,6 @@ namespace Stand
     public interface IStand
     {
         Queue<OrderType> Orders { get; set; }
+
     }
 }
